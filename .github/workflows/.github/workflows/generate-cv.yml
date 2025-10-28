@@ -1,0 +1,47 @@
+name: Generate CV (DOCX & PDF)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'index.html'
+      - 'foto.jpg'
+      - '.github/workflows/generate-cv.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y pandoc wkhtmltopdf libreoffice
+
+    - name: Generate DOCX from HTML
+      run: |
+        pandoc index.html -o Lucio_Gimenez_CV.docx --resource-path=.
+
+    - name: Generate PDF from HTML (wkhtmltopdf preserves layout & local images)
+      run: |
+        wkhtmltopdf --enable-local-file-access index.html Lucio_Gimenez_CV.pdf
+
+    - name: Commit and push generated files
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+        git add Lucio_Gimenez_CV.docx Lucio_Gimenez_CV.pdf || true
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Add formatted CV .docx and .pdf with photo [skip ci]"
+          git push origin HEAD:main
+        fi

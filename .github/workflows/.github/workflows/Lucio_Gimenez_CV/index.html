@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae de Lucio Gimenez</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Lucio Gimenez</h1>
+        <img src="foto.jpg" alt="Foto de Lucio Gimenez" />
+        <p>Email: lucio.gimenez@example.com</p>
+        <p>Teléfono: +34 123 456 789</p>
+    </header>
+    
+    <section>
+        <h2>Perfil Profesional</h2>
+        <p>Descripción breve sobre la experiencia y habilidades profesionales.</p>
+    </section>
+
+    <section>
+        <h2>Experiencia Laboral</h2>
+        <ul>
+            <li>
+                <h3>Puesto en Empresa XYZ</h3>
+                <p>Descripción de las responsabilidades y logros.</p>
+                <p>Fecha: Enero 2020 - Presente</p>
+            </li>
+            <li>
+                <h3>Puesto en Empresa ABC</h3>
+                <p>Descripción de las responsabilidades y logros.</p>
+                <p>Fecha: Enero 2018 - Diciembre 2019</p>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Educación</h2>
+        <ul>
+            <li>
+                <h3>Título Universitario</h3>
+                <p>Nombre de la Universidad, Año de Graduación</p>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Fecha de actualización: <span id="fecha-actualizacion"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById('fecha-actualizacion').textContent = new Date().toLocaleDateString('es-ES');
+    </script>
+</body>
+</html>
