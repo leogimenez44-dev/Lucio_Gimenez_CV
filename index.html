@@ -13,6 +13,7 @@
         /* Nuevo estilo para encabezado con foto */
         .header { display: flex; align-items: center; margin-bottom: 20px; }
         .header img { width: 120px; height: 120px; border-radius: 50%; margin-right: 20px; object-fit: cover; border: 2px solid #ccc; }
+        .qr { margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -22,12 +23,19 @@
             <h1>Lucio Gimenez Videla</h1>
             <p>DNI: 45.723.092 | Tel: +54 261 5336251 | Email: <a href="mailto:lucio.gv@gmail.com">lucio.gv@gmail.com</a></p>
             <p>LinkedIn: Lucio Gimenez | Instagram: luchogvidelaa</p>
+            <div class="qr">
+                <!-- QR clicable que apunta al perfil de LinkedIn -->
+                <a href="https://www.linkedin.com/in/lucio-gimenez-videla/" target="_blank" title="Ver LinkedIn de Lucio Gimenez">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.linkedin.com/in/lucio-gimenez-videla/" alt="QR LinkedIn" style="border:1px solid #ccc;" />
+                </a>
+                <p style="margin:8px 0 0 0; font-size:14px;">Escaneá o hacé clic en el QR para ver mi LinkedIn.</p>
+            </div>
         </div>
     </div>
 
     <div class="section">
         <h2>Resumen Profesional</h2>
-        <p>Profesional en formación con base académica en Derecho y Psicología, combinada con experiencia práctica en atención al cliente, ventas y call center. Destaco por mi capacidad de organización, comunicación efectiva y enfoque en resultados, ofreciendo soluciones eficientes y colaborando activamente en equipos de trabajo. Motivado a crecer profesionalmente y aportar creatividad y energía a cada proyecto.</p>
+        <p>Profesional en formación con base académica en Derecho y Psicología, combinada con experiencia práctica en atención al cliente, ventas y call center. Destaco por mi capacidad de organización, comunicación y adaptabilidad para trabajar en equipo y brindar un servicio orientado al cliente.</p>
     </div>
 
     <div class="section">
@@ -65,6 +73,10 @@
             <li>LinkedIn: <a href="https://www.linkedin.com/in/lucio-gimenez-videla/" target="_blank">Lucio Gimenez</a></li>
             <li>Instagram: <a href="https://www.instagram.com/luchogvidelaa/" target="_blank">luchogvidelaa</a></li>
         </ul>
+        <p>Descargar CV: 
+            <a href="/Lucio_Gimenez_CV.docx" download>Word (.docx)</a> | 
+            <a href="/Lucio_Gimenez_CV.pdf" download>PDF (.pdf)</a>
+        </p>
     </div>
 </body>
 </html>
